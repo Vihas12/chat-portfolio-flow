@@ -85,7 +85,7 @@ const Typewriter: React.FC<TypewriterProps> = ({
       <motion.span
         animate={{ opacity: isBlinking || isDone ? [1, 0, 1] : 1 }}
         transition={{ repeat: Infinity, duration: 0.8 }}
-        className="inline-block w-[3px] h-6 bg-portfolio-teal ml-1 align-middle"
+        className="inline-block w-[3px] h-8 dark:bg-portfolio-teal ml-1 align-middle"
       />
     </div>
   );
