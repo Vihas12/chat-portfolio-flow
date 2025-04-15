@@ -56,6 +56,17 @@ const Home = () => {
     },
   ];
 
+  const typewriterTexts = [
+    "build things for the web.",
+    "design beautiful interfaces.",
+    "create interactive experiences.",
+    "develop modern applications.",
+    "solve complex problems.",
+    "craft digital solutions.",
+    "transform ideas into reality.",
+    "create digital experiences."
+  ];
+
   return (
     <>
       <div ref={cursorRef} className="hidden lg:block fixed w-64 h-64 pointer-events-none z-0 opacity-10 rounded-full bg-portfolio-teal blur-3xl -translate-x-1/2 -translate-y-1/2" />
@@ -85,7 +96,7 @@ const Home = () => {
               variants={childVariants}
               className="text-3xl md:text-5xl lg:text-6xl font-bold text-portfolio-light mt-2"
             >
-              I <Typewriter text={["build things for the web.", "design beautiful interfaces.", "solve complex problems.", "create digital experiences."]} />
+              I <Typewriter text={typewriterTexts} infinite={false} pauseDuration={2000} />
             </motion.h2>
             <motion.p
               variants={childVariants}

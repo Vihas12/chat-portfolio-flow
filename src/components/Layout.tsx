@@ -54,7 +54,7 @@ const Layout = () => {
       className="min-h-screen flex flex-col bg-white dark:bg-portfolio-blue transition-colors duration-300"
     >
       <Navbar />
-      <div className="fixed top-4 right-4 z-50">
+      <div className="fixed bottom-4 left-4 z-50">
         <ThemeToggle />
       </div>
       <main className="flex-grow">
