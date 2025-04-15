@@ -48,7 +48,7 @@ const NotFound = () => {
 
           <Link
             to="/"
-            className="btn-primary inline-flex items-center justify-center"
+            className="btn-primary dark:btn-primary inline-flex items-center justify-center text-black bg-white border-black hover:bg-black hover:text-white transition-colors duration-300 "
           >
             <Home size={18} className="mr-2" />
             Back to Home
