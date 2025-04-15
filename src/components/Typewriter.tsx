@@ -1,6 +1,5 @@
-
-import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 interface TypewriterProps {
   text: string[];
@@ -19,61 +18,64 @@ const Typewriter: React.FC<TypewriterProps> = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [isBlinking, setIsBlinking] = useState(true);
   const [isPaused, setIsPaused] = useState(false);
+  const [isBlinking, setIsBlinking] = useState(true);
   const [isDone, setIsDone] = useState(false);
 
   useEffect(() => {
+    if (isDone) return;
+  
     let timeout: NodeJS.Timeout;
-
-    if (isDone) {
-      return;
-    }
-
+  
+    const fullText = text[currentTextIndex];
+  
     if (isPaused) {
       timeout = setTimeout(() => {
         setIsPaused(false);
-        if (!infinite && currentTextIndex === text.length - 1 && currentIndex === text[currentTextIndex].length) {
-          setIsDone(true);
-        } else {
-          setIsDeleting(true);
-        }
+        setIsDeleting(true);
       }, pauseDuration);
       return () => clearTimeout(timeout);
     }
-
-    if (currentTextIndex < text.length) {
-      if (!isDeleting && currentIndex <= text[currentTextIndex].length) {
-        if (currentIndex === text[currentTextIndex].length) {
-          setIsPaused(true);
-          setIsBlinking(true);
-        } else {
-          timeout = setTimeout(() => {
-            setCurrentText(text[currentTextIndex].substring(0, currentIndex));
-            setCurrentIndex(currentIndex + 1);
-            setIsBlinking(false);
-          }, delay);
-        }
-      } else if (isDeleting && currentIndex >= 0) {
+  
+    if (!isDeleting && currentIndex <= fullText.length) {
+      if (currentIndex === fullText.length) {
+        setIsPaused(true);
+        setIsBlinking(true);
+      } else {
         timeout = setTimeout(() => {
-          setCurrentText(text[currentTextIndex].substring(0, currentIndex));
-          setCurrentIndex(currentIndex - 1);
+          setCurrentText(fullText.substring(0, currentIndex + 1));
+          setCurrentIndex(prev => prev + 1);
           setIsBlinking(false);
-        }, delay / 2);
-      } else if (currentIndex === 0 && isDeleting) {
-        setIsDeleting(false);
-        setCurrentTextIndex((prevIndex) => 
-          infinite ? (prevIndex + 1) % text.length : Math.min(prevIndex + 1, text.length - 1)
-        );
+        }, delay);
+      }
+    } else if (isDeleting && currentIndex >= 0) {
+      timeout = setTimeout(() => {
+        setCurrentText(fullText.substring(0, currentIndex - 1));
+        setCurrentIndex(prev => prev - 1);
+        setIsBlinking(false);
+      }, delay / 2);
+    } else if (isDeleting && currentIndex < 0) {
+      setIsDeleting(false);
+      const nextIndex = currentTextIndex + 1;
+  
+      const shouldLoop = infinite || nextIndex < text.length;
+      if (shouldLoop) {
+        setCurrentTextIndex(nextIndex % text.length);
+        setCurrentIndex(0);
+        setIsDone(false);
+      } else {
+        setCurrentTextIndex(0);
+        setCurrentIndex(0);
+        setIsDone(false);
       }
     }
-
+  
     return () => clearTimeout(timeout);
-  }, [currentIndex, currentTextIndex, delay, infinite, isDeleting, isPaused, isDone, pauseDuration, text]);
-
+  }, [currentIndex, isDeleting, isPaused, isDone, text, currentTextIndex, delay, pauseDuration, infinite]);
+  
   return (
     <div className="inline-block">
-      <motion.span 
+      <motion.span
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         className="inline-block"

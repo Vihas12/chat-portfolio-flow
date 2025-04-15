@@ -57,14 +57,14 @@ const Home = () => {
   ];
 
   const typewriterTexts = [
-    "build things for the web.",
-    "design beautiful interfaces.",
-    "create interactive experiences.",
-    "develop modern applications.",
-    "solve complex problems.",
-    "craft digital solutions.",
-    "transform ideas into reality.",
-    "create digital experiences."
+    "build intelligent web applications.",
+    "design human-centered digital products.",
+    "develop AI-powered tools.",
+    "make the web more accessible.",
+    "craft seamless user experiences.",
+    "transform ideas into interactive realities.",
+    "combine creativity with technology.",
+    "automate and optimize digital workflows.",
   ];
 
   return (
@@ -90,7 +90,7 @@ const Home = () => {
               variants={childVariants}
               className="text-4xl md:text-6xl lg:text-7xl font-bold text-portfolio-blue dark:text-portfolio-lightest transition-colors duration-300"
             >
-              John Doe.
+              Vihas Poojari
             </motion.h1>
             <motion.h2
               variants={childVariants}
@@ -102,8 +102,7 @@ const Home = () => {
               variants={childVariants}
               className="text-portfolio-light mt-6 max-w-xl text-lg"
             >
-              I'm a web developer specializing in building exceptional digital experiences.
-              Currently, I'm focused on building accessible, human-centered products.
+              I'm a web developer with a focus on building intelligent, user-centered web applications. I specialize in creating seamless digital experiences using modern frameworks like React, TypeScript, and Next.js. Lately, I’ve been working on AI-integrated tools and accessible solutions that make everyday tasks smarter and more efficient.
             </motion.p>
             <motion.div variants={childVariants} className="mt-10">
               <Link to="/projects">

@@ -1,4 +1,3 @@
-
 import { useState } from "react"
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "./ThemeProvider"
@@ -8,11 +7,14 @@ export default function ThemeToggle() {
   const { theme, setTheme } = useTheme()
   const [isHovered, setIsHovered] = useState(false)
 
+  const ringColorClass =
+    theme === "dark" ? "focus:ring-portfolio-teal" : "focus:ring-black"
+
   return (
     <motion.button
       aria-label="Toggle theme"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="rounded-full p-2 focus:outline-none focus:ring-2 focus:ring-portfolio-teal transition-colors"
+      className={`rounded-full p-2 focus:outline-none focus:ring-2 transition-colors ${ringColorClass}`}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       onMouseEnter={() => setIsHovered(true)}
@@ -26,7 +28,7 @@ export default function ThemeToggle() {
         {theme === "dark" ? (
           <Sun className="h-5 w-5 text-portfolio-teal" />
         ) : (
-          <Moon className="h-5 w-5 text-portfolio-teal" />
+          <Moon className="h-5 w-5 text-portfolio-black" />
         )}
       </motion.div>
     </motion.button>

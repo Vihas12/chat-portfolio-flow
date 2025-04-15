@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 import { motion } from "framer-motion";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import ChatbotWidget from "./ChatbotWidget";
+// import ChatbotWidget from "./ChatbotWidget";
 import ThemeToggle from "./ThemeToggle";
 
 const Layout = () => {
@@ -61,7 +61,7 @@ const Layout = () => {
         <Outlet />
       </main>
       <Footer />
-      <ChatbotWidget />
+      {/* <ChatbotWidget /> */}
     </motion.div>
   );
 };
