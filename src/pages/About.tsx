@@ -1,7 +1,8 @@
 
 import { motion } from "framer-motion";
+import profile from "/src/assets/profile.png"; 
 import { CheckCircle2 } from "lucide-react";
-
+import React from "react";
 const About = () => {
   const skills = [
     "JavaScript/TypeScript", 
@@ -9,11 +10,16 @@ const About = () => {
     "Next.js", 
     "Node.js", 
     "CSS/Tailwind", 
-    "UI/UX Design", 
-    "Framer Motion",
+    "HTML5",
+    "MongoDB",
     "API Integration",
-    "GraphQL",
-    "Responsive Design"
+    "Firebase",
+    "Python",
+    "OpenAI API",
+    "Machine Learning",
+    "EasyOCR",
+    "Git/GitHub",
+    "Kinde Auth/OAuth",
   ];
 
   const containerVariants = {
@@ -51,15 +57,12 @@ const About = () => {
           >
             <div className="space-y-6">
               <p className="text-lg text-portfolio-light">
-                Hello! I'm John, a web developer with a passion for creating beautiful,
-                functional, and user-centered digital experiences. I enjoy 
-                transforming complex problems into simple, intuitive designs.
+              Hello! I'm Vihas, a web developer with a passion for creating beautiful, functional, and user-centered digital experiences. I enjoy transforming complex problems into simple, intuitive designs.
               </p>
               
               <p className="text-lg text-portfolio-light">
-                With over 5 years of experience in the field, I've had the opportunity
-                to work with a diverse range of clients from startups to large corporations.
-                My approach combines technical expertise with creative problem-solving.
+                I've had the opportunity to work on a wide range of projects.
+                My approach combines technical expertise with creative problem-solving, and I'm particularly excited about integrating AI-enabled features to make digital experiences smarter and more efficient.
               </p>
               
               <p className="text-lg text-portfolio-light">
@@ -90,7 +93,7 @@ const About = () => {
                   variants={childVariants}
                   className="flex items-center"
                 >
-                  <CheckCircle2 className="mr-2 text-portfolio-teal" size={18} />
+                  <CheckCircle2 className="mr-2 dark:text-portfolio-teal" size={18} />
                   <span>{skill}</span>
                 </motion.div>
               ))}
@@ -103,15 +106,15 @@ const About = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="relative"
           >
-            <div className="relative z-10 rounded-lg overflow-hidden border-2 border-portfolio-teal">
+            <div className="relative z-10 rounded-lg overflow-hidden border-2 dark:border-portfolio-teal">
               <div className="aspect-[4/5] bg-gray-700 w-full">
-                {/* Placeholder for profile image */}
-                <div className="w-full h-full flex items-center justify-center bg-portfolio-navy">
-                  <span className="text-portfolio-teal text-lg">Profile Image</span>
-                </div>
+              <img
+                src={profile}
+                alt="Vihas Profile"
+              />
               </div>
             </div>
-            <div className="absolute -z-0 top-5 left-5 w-full h-full border-2 border-portfolio-teal rounded-lg"></div>
+            <div className="absolute -z-0 top-5 left-5 w-full h-full border-2 dark:border-portfolio-teal rounded-lg"></div>
           </motion.div>
         </div>
         
@@ -125,34 +128,31 @@ const About = () => {
           
           <div className="space-y-10">
             <div className="relative pl-8 border-l-2 border-portfolio-teal/30">
+                <div className="absolute top-0 left-[-9px] w-4 h-4 rounded-full bg-portfolio-teal"></div>
+                <h3 className="text-xl font-medium">Bachelor of Engineering, Information Technology</h3>
+                <p className="dark:text-portfolio-teal">University of Mumbai • 2022 - Present</p>
+                <p className="mt-2 text-portfolio-light">
+                  Currently pursuing a degree in Information Technology, focusing on web development and AI technologies. 
+                </p>
+              </div>
+
+            <div className="relative pl-8 border-l-2 border-portfolio-teal/30">
               <div className="absolute top-0 left-[-9px] w-4 h-4 rounded-full bg-portfolio-teal"></div>
-              <h3 className="text-xl font-medium">Senior Web Developer</h3>
-              <p className="text-portfolio-teal">TechCorp Inc. • 2020 - Present</p>
+              <h3 className="text-xl font-medium">Higher Secondary Certificate</h3>
+              <p className="dark:text-portfolio-teal">St. Mary's Junior College • 2020 - 2022</p>
               <p className="mt-2 text-portfolio-light">
-                Lead developer for enterprise client projects, managing a team of 5 developers.
-                Implemented modern CI/CD practices and improved site performance by 40%.
               </p>
             </div>
             
             <div className="relative pl-8 border-l-2 border-portfolio-teal/30">
               <div className="absolute top-0 left-[-9px] w-4 h-4 rounded-full bg-portfolio-teal"></div>
-              <h3 className="text-xl font-medium">Front-end Developer</h3>
-              <p className="text-portfolio-teal">Digital Agency • 2018 - 2020</p>
+              <h3 className="text-xl font-medium">Secondary School Certificate</h3>
+              <p className="dark:text-portfolio-teal">Sai Holy Faith High School  • 2008 - 2020</p>
               <p className="mt-2 text-portfolio-light">
-                Developed responsive websites and applications for various clients.
-                Specialized in animation and interactive user experiences.
               </p>
             </div>
             
-            <div className="relative pl-8 border-l-2 border-portfolio-teal/30">
-              <div className="absolute top-0 left-[-9px] w-4 h-4 rounded-full bg-portfolio-teal"></div>
-              <h3 className="text-xl font-medium">Bachelor's Degree, Computer Science</h3>
-              <p className="text-portfolio-teal">University of Technology • 2014 - 2018</p>
-              <p className="mt-2 text-portfolio-light">
-                Focused on web technologies and human-computer interaction.
-                Graduated with honors.
-              </p>
-            </div>
+            
           </div>
         </motion.div>
       </div>
