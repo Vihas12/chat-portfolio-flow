@@ -6,10 +6,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub" },
+    { icon: Github, href: "https://github.com/Vihas12", label: "GitHub" },
     { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Mail, href: "#", label: "Email" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/vihas-poojari/", label: "LinkedIn" },
+    { icon: Mail, href: "https://mail.google.com/mail/?view=cm&to=vihas.poojari45@gmail.com", label: "Email" },
   ];
 
   return (
@@ -32,7 +32,7 @@ const Footer = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: index * 0.1, type: "spring", stiffness: 400, damping: 10 }}
-                className="text-portfolio-light hover:text-portfolio-teal transition-colors"
+                className="text-portfolio-light  dark:hover:text-portfolio-teal transition-colors"
               >
                 <social.icon size={20} />
               </motion.a>

@@ -43,33 +43,36 @@ const Navbar = () => {
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
           >
-            <span className="text-portfolio-teal font-bold text-xl mr-2">&lt;</span>
+            <span className="dark:text-portfolio-teal font-bold text-xl mr-2">&lt;</span>
             <span className="font-bold text-xl">Portfolio</span>
-            <span className="text-portfolio-teal font-bold text-xl ml-2">/&gt;</span>
+            <span className="dark:text-portfolio-teal font-bold text-xl ml-2">/&gt;</span>
           </motion.div>
         </NavLink>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8">
-          {navItems.map((item, index) => (
-            <NavLink
-              key={item.name}
-              to={item.path}
-              className={({ isActive }) => 
-                `nav-link ${isActive ? "text-portfolio-teal" : ""}`
-              }
+        {navItems.map((item, index) => (
+          <NavLink
+            key={item.name}
+            to={item.path}
+            className={({ isActive }) =>
+              `nav-link ${
+                isActive ? "text-gray-500 dark:text-portfolio-teal" : ""
+              } hover:text-gray-500`
+            }
+          >
+            <motion.span
+              initial={{ y: -20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: index * 0.1 + 0.2 }}
             >
-              <motion.span
-                initial={{ y: -20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: index * 0.1 + 0.2 }}
-              >
-                {item.name}
-              </motion.span>
-            </NavLink>
-          ))}
+              {item.name}
+            </motion.span>
+          </NavLink>
+        ))}
+
           <motion.a
-            href="#resume"
+            href="https://drive.google.com/file/d/1DDB2agGBzqOPuaPzQnM0Hvn5YhxZrRqZ/view?usp=drive_link"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="btn-primary"
@@ -83,7 +86,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-portfolio-teal focus:outline-none"
+          className="md:hidden dark:text-portfolio-teal focus:outline-none"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -104,13 +107,13 @@ const Navbar = () => {
                 key={item.name}
                 to={item.path}
                 className={({ isActive }) => 
-                  `nav-link text-lg ${isActive ? "text-portfolio-teal" : ""}`
+                  `nav-link text-lg ${isActive ? "text-gray-500 dark:text-portfolio-teal" : ""}hover:text-gray-500`
                 }
               >
                 {item.name}
               </NavLink>
             ))}
-            <a href="#resume" className="btn-primary text-center">
+            <a href="https://drive.google.com/file/d/1DDB2agGBzqOPuaPzQnM0Hvn5YhxZrRqZ/view?usp=drive_link" className="btn-primary dark:btn-primary text-center text-black bg-white border-black hover:bg-black hover:text-white transition-colors duration-300 ">
               Resume
             </a>
           </div>

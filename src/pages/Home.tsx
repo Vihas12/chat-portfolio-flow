@@ -85,7 +85,7 @@ const Home = () => {
               variants={childVariants}
               className="text-portfolio-black dark:text-portfolio-teal mb-4 font-mono"
             >
-              Hi, my name is
+              👋 Hi, my name is
             </motion.p>
             <motion.h1
               variants={childVariants}

@@ -36,7 +36,7 @@ const Projects = () => {
       title: "Blogging Website with Abusive Language Detection",
       description: "A blogging platform with integrated AI moderation that detects and filters abusive language from user comments in real-time.",
       technologies: ["PHP Laravel", "Flask", "Machine Learning", "Sklearn", "SQL"],
-      imageUrl: "",
+      imageUrl: "https://res.cloudinary.com/dkl2kdu7e/image/upload/v1744740283/Screenshot_2025-04-15_233420_gomlcz.png",
       githubUrl: "#",
       liveUrl: "#",
       featured: true,

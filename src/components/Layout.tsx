@@ -38,7 +38,7 @@ const Layout = () => {
               ease: "easeInOut",
             }}
           >
-            Portfolio
+            👋 Welcome to My Portfolio
           </motion.div>
         </motion.div>
       </div>

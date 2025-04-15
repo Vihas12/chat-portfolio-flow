@@ -145,7 +145,7 @@ const Contact = () => {
                   </svg>
                 </a>
                 <a
-                  href="mailto:vihas.poojari45@gmail.com"
+                  href="https://mail.google.com/mail/?view=cm&to=vihas.poojari45@gmail.com"
                   className="bg-portfolio-navy p-3 rounded-lg  hover:bg-black/50 dark:hover:bg-portfolio-teal/10 transition-colors"
                 >
                   <svg className="w-5 h-5 text-white dark:text-portfolio-teal" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
