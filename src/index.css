@@ -42,18 +42,22 @@
   }
 
   body {
-    @apply bg-portfolio-blue text-portfolio-lightest;
+    @apply bg-white text-gray-800 dark:bg-portfolio-blue dark:text-portfolio-lightest transition-colors duration-300;
     font-family: 'Inter', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-semibold;
   }
+  
+  .dark {
+    color-scheme: dark;
+  }
 }
 
 @layer components {
   .nav-link {
-    @apply relative inline-block text-portfolio-light hover:text-portfolio-teal transition-colors duration-300;
+    @apply relative inline-block text-gray-600 dark:text-portfolio-light hover:text-portfolio-teal transition-colors duration-300;
   }
 
   .nav-link::after {
@@ -70,7 +74,7 @@
   }
 
   .section-heading {
-    @apply text-2xl sm:text-3xl font-bold text-portfolio-lightest mb-6 flex items-center;
+    @apply text-2xl sm:text-3xl font-bold text-gray-800 dark:text-portfolio-lightest mb-6 flex items-center transition-colors duration-300;
   }
   
   .section-heading::before {
@@ -84,7 +88,7 @@
   }
   
   .project-card {
-    @apply relative overflow-hidden rounded-lg bg-portfolio-navy p-6 transition-all duration-300 border border-transparent hover:border-portfolio-teal/30;
+    @apply relative overflow-hidden rounded-lg bg-white dark:bg-portfolio-navy p-6 transition-all duration-300 border border-transparent hover:border-portfolio-teal/30 shadow-sm;
   }
   
   .chatbot-trigger {
@@ -94,7 +98,7 @@
 
 @layer utilities {
   .glass-effect {
-    @apply bg-portfolio-navy/70 backdrop-blur-md border border-portfolio-lightest/10;
+    @apply bg-white/70 dark:bg-portfolio-navy/70 backdrop-blur-md border border-white/20 dark:border-portfolio-lightest/10 transition-colors duration-300;
   }
 }
 

@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Code, LayoutGrid, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
+import Typewriter from "@/components/Typewriter";
 
 const Home = () => {
   const cursorRef = useRef<HTMLDivElement>(null);
@@ -76,7 +77,7 @@ const Home = () => {
             </motion.p>
             <motion.h1
               variants={childVariants}
-              className="text-4xl md:text-6xl lg:text-7xl font-bold"
+              className="text-4xl md:text-6xl lg:text-7xl font-bold text-portfolio-blue dark:text-portfolio-lightest transition-colors duration-300"
             >
               John Doe.
             </motion.h1>
@@ -84,7 +85,7 @@ const Home = () => {
               variants={childVariants}
               className="text-3xl md:text-5xl lg:text-6xl font-bold text-portfolio-light mt-2"
             >
-              I build things for the web.
+              I <Typewriter text={["build things for the web.", "design beautiful interfaces.", "solve complex problems.", "create digital experiences."]} />
             </motion.h2>
             <motion.p
               variants={childVariants}
@@ -110,7 +111,7 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 px-4 bg-portfolio-navy/50">
+      <section className="py-20 px-4 bg-gray-50 dark:bg-portfolio-navy/50 transition-colors duration-300">
         <div className="container mx-auto">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -131,15 +132,15 @@ const Home = () => {
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 viewport={{ once: true, margin: "-50px" }}
                 whileHover={{ y: -10 }}
-                className="bg-portfolio-navy p-6 rounded-lg border border-portfolio-teal/10 hover:border-portfolio-teal/30 transition-all"
+                className="bg-white dark:bg-portfolio-navy p-6 rounded-lg border border-gray-100 dark:border-portfolio-teal/10 hover:border-gray-200 dark:hover:border-portfolio-teal/30 transition-all shadow-sm"
               >
                 <div className="h-12 w-12 bg-portfolio-teal/10 flex items-center justify-center rounded-lg mb-4">
                   <service.icon className="text-portfolio-teal" size={24} />
                 </div>
-                <h3 className="text-xl font-medium text-portfolio-lightest mb-3">
+                <h3 className="text-xl font-medium text-portfolio-blue dark:text-portfolio-lightest transition-colors duration-300 mb-3">
                   {service.title}
                 </h3>
-                <p className="text-portfolio-light">
+                <p className="text-gray-600 dark:text-portfolio-light transition-colors duration-300">
                   {service.description}
                 </p>
               </motion.div>
@@ -149,7 +150,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-4">
+      <section className="py-24 px-4 bg-white dark:bg-portfolio-blue transition-colors duration-300">
         <div className="container mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -158,8 +159,8 @@ const Home = () => {
             viewport={{ once: true, margin: "-100px" }}
             className="max-w-2xl mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Interested in working together?</h2>
-            <p className="text-portfolio-light text-lg mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-portfolio-blue dark:text-portfolio-lightest transition-colors duration-300">Interested in working together?</h2>
+            <p className="text-gray-600 dark:text-portfolio-light transition-colors duration-300 text-lg mb-10">
               I'm always open to discussing product design work or partnership opportunities.
             </p>
             <Link to="/contact">

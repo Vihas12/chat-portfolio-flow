@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import ChatbotWidget from "./ChatbotWidget";
+import ThemeToggle from "./ThemeToggle";
 
 const Layout = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -19,7 +20,7 @@ const Layout = () => {
 
   if (isLoading) {
     return (
-      <div className="h-screen flex items-center justify-center bg-portfolio-blue">
+      <div className="h-screen flex items-center justify-center bg-white dark:bg-portfolio-blue transition-colors duration-300">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -50,9 +51,12 @@ const Layout = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen flex flex-col"
+      className="min-h-screen flex flex-col bg-white dark:bg-portfolio-blue transition-colors duration-300"
     >
       <Navbar />
+      <div className="fixed top-4 right-4 z-50">
+        <ThemeToggle />
+      </div>
       <main className="flex-grow">
         <Outlet />
       </main>
