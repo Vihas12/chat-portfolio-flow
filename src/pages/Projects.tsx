@@ -13,30 +13,30 @@ type Project = {
   githubUrl: string;
   liveUrl: string;
   featured: boolean;
-  category: "web" | "mobile" | "design";
+  category: "web" | "machine-learning" ;
 };
 
 const Projects = () => {
-  const [activeFilter, setActiveFilter] = useState<"all" | "web" | "mobile" | "design">("all");
+  const [activeFilter, setActiveFilter] = useState<"all" | "web" | "machine-learning">("all");
 
   const projects: Project[] = [
     {
       id: 1,
-      title: "E-commerce Platform",
-      description: "A full-featured online store with product listings, cart functionality, and secure checkout process.",
-      technologies: ["React", "Node.js", "Express", "MongoDB"],
-      imageUrl: "", // Placeholder
-      githubUrl: "#",
+      title: "Smart Address Completer",
+      description: "A tool that predicts and fills incomplete addresses using machine learning.",
+      technologies: ["Next.js", "MongoDB", "Python", "Scikit-learn", "EasyOCR"],
+      imageUrl: "https://res.cloudinary.com/dkl2kdu7e/image/upload/v1744737802/Screenshot_2025-04-15_225306_c6gx53.png", // Placeholder
+      githubUrl: "https://github.com/Vihas12/Address_Correction-using-AI",
       liveUrl: "#",
       featured: true,
       category: "web",
     },
     {
       id: 2,
-      title: "Portfolio Website",
-      description: "A professional portfolio website with animations and interactive elements.",
-      technologies: ["React", "Framer Motion", "Tailwind CSS"],
-      imageUrl: "", // Placeholder
+      title: "Blogging Website with Abusive Language Detection",
+      description: "A blogging platform with integrated AI moderation that detects and filters abusive language from user comments in real-time.",
+      technologies: ["PHP Laravel", "Flask", "Machine Learning", "Sklearn", "SQL"],
+      imageUrl: "",
       githubUrl: "#",
       liveUrl: "#",
       featured: true,
@@ -44,42 +44,31 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "Task Management App",
-      description: "A responsive application for managing tasks and projects with team collaboration features.",
-      technologies: ["TypeScript", "React", "Firebase"],
-      imageUrl: "", // Placeholder
-      githubUrl: "#",
-      liveUrl: "#",
+      title: "Smart Student ID Generator",
+      description: "A React app that generates student ID cards with editable details, template switching, and persistent storage.",
+      technologies:  ["React", "TypeScript", "Tailwind CSS"],
+      imageUrl: "https://res.cloudinary.com/dkl2kdu7e/image/upload/v1744737567/Screenshot_2025-04-15_224856_bn6ydd.png", // Placeholder
+      githubUrl: "https://github.com/Vihas12/card-gen-genius",
+      liveUrl: "https://card-gen-genius.lovable.app/",
       featured: false,
       category: "web",
     },
     {
       id: 4,
-      title: "Mobile Banking App",
-      description: "A secure and user-friendly mobile banking application with transaction history and budgeting tools.",
-      technologies: ["React Native", "Redux", "Node.js"],
-      imageUrl: "", // Placeholder
-      githubUrl: "#",
-      liveUrl: "#",
-      featured: false,
-      category: "mobile",
+      title: "Doctor Availability Finder",
+      description: "An ML-powered app to predict and rank doctors based on login times, region, specialty, and historical activity, helping optimize survey reach.",
+      technologies: ["Next.js", "Python", "Pandas", "Gradio", "Scikit-learn", "Hugging Face"],
+      imageUrl: "https://res.cloudinary.com/dkl2kdu7e/image/upload/v1744737108/Screenshot_2025-04-15_220653_velq4u.png",
+      githubUrl: "https://github.com/Vihas12/doctor_filter_ML",
+      liveUrl: "https://interaspace.vercel.app/",
+      featured: true,
+      category: "machine-learning",
     },
     {
       id: 5,
-      title: "Brand Identity Design",
-      description: "Complete brand identity design including logo, color scheme, typography, and brand guidelines.",
-      technologies: ["Figma", "Illustrator", "Photoshop"],
-      imageUrl: "", // Placeholder
-      githubUrl: "#",
-      liveUrl: "#",
-      featured: false,
-      category: "design",
-    },
-    {
-      id: 6,
-      title: "Real-time Chat Application",
-      description: "A chat platform with real-time messaging, user authentication, and file sharing capabilities.",
-      technologies: ["React", "Socket.io", "Express", "MongoDB"],
+      title: "Portfolio Website",
+      description: "A professional portfolio website with animations and interactive elements.",
+      technologies: ["React", "Framer Motion", "Tailwind CSS"],
       imageUrl: "", // Placeholder
       githubUrl: "#",
       liveUrl: "#",
@@ -133,30 +122,23 @@ const Projects = () => {
           <Button
             onClick={() => setActiveFilter("all")}
             variant={activeFilter === "all" ? "default" : "outline"}
-            className={activeFilter === "all" ? "bg-portfolio-teal text-portfolio-blue" : "border-portfolio-teal/30 text-portfolio-light"}
+            className={activeFilter === "all" ? "dark:bg-portfolio-teal dark:text-portfolio-blue bg-black text-white hover:bg-black hover:text-white" : "dark:border-portfolio-teal/30 dark:text-portfolio-light dark:bg-portfolio-blue text-black bg-white border-black hover:bg-black hover:text-white transition-colors duration-300"}
           >
             All Projects
           </Button>
           <Button
             onClick={() => setActiveFilter("web")}
             variant={activeFilter === "web" ? "default" : "outline"}
-            className={activeFilter === "web" ? "bg-portfolio-teal text-portfolio-blue" : "border-portfolio-teal/30 text-portfolio-light"}
+            className={activeFilter === "web" ? "dark:bg-portfolio-teal dark:text-portfolio-blue bg-black text-white hover:bg-black hover:text-white" : "dark:border-portfolio-teal/30 dark:text-portfolio-light dark:bg-portfolio-blue text-black bg-white border-black hover:bg-black hover:text-white transition-colors duration-300"}
           >
             Web
           </Button>
           <Button
-            onClick={() => setActiveFilter("mobile")}
-            variant={activeFilter === "mobile" ? "default" : "outline"}
-            className={activeFilter === "mobile" ? "bg-portfolio-teal text-portfolio-blue" : "border-portfolio-teal/30 text-portfolio-light"}
+            onClick={() => setActiveFilter("machine-learning")}
+            variant={activeFilter === "machine-learning" ? "default" : "outline"}
+            className={activeFilter === "machine-learning" ? "dark:bg-portfolio-teal dark:text-portfolio-blue bg-black text-white hover:bg-black hover:text-white" : "dark:border-portfolio-teal/30 dark:text-portfolio-light dark:bg-portfolio-blue text-black bg-white border-black hover:bg-black hover:text-white transition-colors duration-300"}
           >
-            Mobile
-          </Button>
-          <Button
-            onClick={() => setActiveFilter("design")}
-            variant={activeFilter === "design" ? "default" : "outline"}
-            className={activeFilter === "design" ? "bg-portfolio-teal text-portfolio-blue" : "border-portfolio-teal/30 text-portfolio-light"}
-          >
-            Design
+            Machine Learning
           </Button>
         </div>
 
@@ -182,12 +164,20 @@ const Projects = () => {
                   className={`project-card ${project.featured ? "md:col-span-2" : ""}`}
                 >
                   {project.featured && (
-                    <div className="flex items-center mb-3 text-portfolio-teal">
+                    <div className="flex items-center mb-3 dark:text-portfolio-teal">
                       <Star size={16} className="mr-1" />
                       <span className="text-sm">Featured Project</span>
                     </div>
                   )}
-
+                  {project.imageUrl && (
+                    <img
+                    src={project.imageUrl}
+                    alt={project.title}
+                    className="rounded-lg mb-4 object-cover h-48 w-full"
+                    style={{ objectFit: "cover" }}
+                  />
+                  )}
+                  
                   <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                   <p className="text-portfolio-light mb-4">{project.description}</p>
 
@@ -195,7 +185,7 @@ const Projects = () => {
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-1 text-xs rounded bg-portfolio-teal/10 text-portfolio-teal"
+                        className="px-2 py-1 text-xs rounded bg-black/10 dark:bg-portfolio-teal/10 dark:text-portfolio-teal"
                       >
                         {tech}
                       </span>
@@ -207,18 +197,21 @@ const Projects = () => {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-portfolio-light hover:text-portfolio-teal"
+                      className="text-portfolio-light hover:text-black dark:hover:text-portfolio-teal"
                     >
                       <Github size={20} />
                     </a>
-                    <a
+                    {project.liveUrl != "#" && (
+                      <a
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-portfolio-light hover:text-portfolio-teal"
+                      className="text-portfolio-light hover:text-black dark:hover:text-portfolio-teal"
                     >
                       <ExternalLink size={20} />
                     </a>
+                    )}
+             
                   </div>
                 </motion.div>
               ))}
@@ -236,10 +229,10 @@ const Projects = () => {
             Interested in seeing more of my work?
           </p>
           <a
-            href="https://github.com"
+            href="https://github.com/Vihas12"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center btn-primary"
+            className="inline-flex items-center btn-primary text-black bg-white border-black hover:bg-black hover:text-white transition-colors duration-300 dark:btn-primary"
           >
             <Github size={18} className="mr-2" />
             View GitHub Profile
