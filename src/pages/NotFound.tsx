@@ -36,7 +36,7 @@ const NotFound = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-8xl font-bold text-portfolio-teal mb-6">404</h1>
+          <h1 className="text-8xl font-bold dark:text-portfolio-teal mb-6">404</h1>
           <h2 className="text-3xl font-semibold mb-4">Page Not Found</h2>
           <p className="text-portfolio-light mb-8">
             Oops! The page you're looking for doesn't exist or has been moved.
