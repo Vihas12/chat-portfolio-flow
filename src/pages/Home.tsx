@@ -103,7 +103,7 @@ const Home = () => {
               variants={childVariants}
               className="text-portfolio-light mt-6 max-w-xl text-lg"
             >
-              I'm a web developer with a focus on building intelligent, user-centered web applications. I specialize in creating seamless digital experiences using modern frameworks like React, TypeScript, and Next.js. Lately, I’ve been working on AI-integrated tools and accessible solutions that make everyday tasks smarter and more efficient.
+              I'm a Full Stack developer and AI enthusiast with a focus on building intelligent, user-centered web applications. I specialize in creating seamless digital experiences using modern frameworks like React, TypeScript, and Next.js. Lately, I’ve been working on AI-integrated tools and accessible solutions that make everyday tasks smarter and more efficient.
             </motion.p>
             <motion.div variants={childVariants} className="mt-10">
               <Link to="/projects">
