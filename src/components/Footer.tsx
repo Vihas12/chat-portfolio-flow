@@ -9,7 +9,7 @@ const Footer = () => {
     { icon: Github, href: "https://github.com/Vihas12", label: "GitHub" },
     { icon: Twitter, href: "#", label: "Twitter" },
     { icon: Linkedin, href: "https://www.linkedin.com/in/vihas-poojari/", label: "LinkedIn" },
-    { icon: Mail, href: "https://mail.google.com/mail/?view=cm&to=vihas.poojari45@gmail.com", label: "Email" },
+    { icon: Mail, href: "mailto:vihas.poojari45@gmail.com", label: "Email" },
   ];
 
   return (
