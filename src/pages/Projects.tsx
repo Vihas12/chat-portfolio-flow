@@ -50,7 +50,7 @@ const Projects = () => {
       imageUrl: "https://res.cloudinary.com/dkl2kdu7e/image/upload/v1744737567/Screenshot_2025-04-15_224856_bn6ydd.png", // Placeholder
       githubUrl: "https://github.com/Vihas12/card-gen-genius",
       liveUrl: "https://card-gen-genius.lovable.app/",
-      featured: false,
+      featured: true,
       category: "web",
     },
     {
@@ -70,8 +70,8 @@ const Projects = () => {
       description: "A professional portfolio website with animations and interactive elements.",
       technologies: ["React", "Framer Motion", "Tailwind CSS"],
       imageUrl: "", // Placeholder
-      githubUrl: "#",
-      liveUrl: "#",
+      githubUrl: "https://github.com/Vihas12/chat-portfolio-flow",
+      liveUrl: "https://vihasportfolio.vercel.app/",
       featured: true,
       category: "web",
     },
