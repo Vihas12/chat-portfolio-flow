@@ -8,42 +8,42 @@ import Footer from "./Footer";
 import ThemeToggle from "./ThemeToggle";
 
 const Layout = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    // Simulate loading
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1500);
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   // Simulate loading
+  //   const timer = setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 1500);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
-  if (isLoading) {
-    return (
-      <div className="h-screen flex items-center justify-center bg-white dark:bg-portfolio-blue transition-colors duration-300">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-portfolio-teal text-4xl font-bold"
-        >
-          <motion.div
-            animate={{
-              scale: [1, 1.1, 1],
-            }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          >
-            👋 Welcome to My Portfolio
-          </motion.div>
-        </motion.div>
-      </div>
-    );
-  }
+  // if (isLoading) {
+  //   return (
+  //     <div className="h-screen flex items-center justify-center bg-white dark:bg-portfolio-blue transition-colors duration-300">
+  //       <motion.div
+  //         initial={{ opacity: 0 }}
+  //         animate={{ opacity: 1 }}
+  //         exit={{ opacity: 0 }}
+  //         transition={{ duration: 0.5 }}
+  //         className="text-portfolio-teal text-4xl font-bold"
+  //       >
+  //         <motion.div
+  //           animate={{
+  //             scale: [1, 1.1, 1],
+  //           }}
+  //           transition={{
+  //             duration: 1.5,
+  //             repeat: Infinity,
+  //             ease: "easeInOut",
+  //           }}
+  //         >
+  //           👋 Welcome to My Portfolio
+  //         </motion.div>
+  //       </motion.div>
+  //     </div>
+  //   );
+  // }
 
   return (
     <motion.div
