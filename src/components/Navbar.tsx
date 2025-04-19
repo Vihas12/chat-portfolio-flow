@@ -75,7 +75,7 @@ const Navbar = () => {
             href="https://drive.google.com/file/d/1DDB2agGBzqOPuaPzQnM0Hvn5YhxZrRqZ/view?usp=drive_link"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="btn-primary"
+            className="btn-primary dark:btn-primary text-center text-black bg-white border-black hover:bg-black hover:text-white transition-colors duration-300"
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: navItems.length * 0.1 + 0.2 }}
