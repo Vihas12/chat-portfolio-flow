@@ -38,14 +38,14 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <NavLink to="/" className="flex items-center">
+        <NavLink to="/" className="flex items-center w-30">
           <motion.div
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            className="flex items-center text-gray-800 dark:text-portfolio-teal"
           >
-            <span className="dark:text-portfolio-teal font-bold text-xl mr-2">&lt;</span>
+            <img src="/favicon.ico" alt="Logo" className=" w-10 mr-2" />
             <span className="font-bold text-xl">Portfolio</span>
-            <span className="dark:text-portfolio-teal font-bold text-xl ml-2">/&gt;</span>
           </motion.div>
         </NavLink>
 
